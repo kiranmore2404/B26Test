@@ -1,0 +1,30 @@
+﻿@model CrudService.Models.Customer
+
+<h1 class="text-center mb-4">Update Customer</h1>
+
+<div class="container">
+    <form method="post" action="@Url.Action("Create", "Customer")">
+        <div class="form-group">
+            <label asp-for="name" for="Name">Name</label>
+            <input type="text" class="form-control rounded-pill" id="Name" name="Name" placeholder="Enter Customer Name" required asp-for="name" />
+            <span asp-validation-for="name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="DisplayOrder">Display Order</label>
+            <input type="number" class="form-control rounded-pill" id="DisplayOrder" name="DisplayOrder" placeholder="Enter Display Order" required asp-for="DisplayOrder" />
+            <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+
+        </div>
+
+        <div class="form-group text-center mt-4">
+            <button type="submit" class="btn btn-success btn-lg">update Customer</button>
+        </div>
+    </form>
+
+    <!-- Back to Home Button -->
+    <div class="form-group text-center mt-4">
+        <a href="@Url.Action("Index", "Home")" class="btn btn-secondary btn-lg">Back to Home</a>
+    </div>
+</div>
+
